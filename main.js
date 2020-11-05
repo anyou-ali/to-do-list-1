@@ -1,5 +1,3 @@
-//let champ = document.getElementById("champ");
-
 form.addEventListener("submit", function(event){
     const li = document.createElement("li");
     li.textContent = champ.value;
