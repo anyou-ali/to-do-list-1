@@ -1,23 +1,49 @@
 "use strict";
 
-  // ajouter une tache avec la methode addEventListener()
+// affichage des tâches stockées dans le localStorage
+
+listeDeTaches.innerHTML = localStorage.getItem("listTache");
+
+// suppression des tâches après stockage dans le localStorage à l'aide de la sélection de class et une boucle for of 
+
+let removeSpanElt = document.querySelectorAll(".removeliElt");
+
+for(let element of removeSpanElt){
+  element.onclick = function(){
+    removeTache(element.parentElement);
+  };
+  //element.onclick = () => removeTache(element.parentElement)
+}
+
+// ajouter une tache avec la methode addEventListener()
 
 form.addEventListener("submit", function(event){
-    let li = document.createElement("li");
+    let liElt = document.createElement("li");
     let spanElt = document.createElement("span");
-    li.innerHTML = champ.value;
+    spanElt.classList.add("removeliElt");
+    liElt.innerHTML = champ.value;
     spanElt.textContent = " x";
-    spanElt.onclick = () => removeTache(li);
-    listeDeTaches.appendChild(li)
-    li.appendChild(spanElt)
+    spanElt.onclick = () => removeTache(liElt);
+    //spanElt.addEventListener("click",function(){removeTache(liElt)})
+    listeDeTaches.appendChild(liElt)
+    liElt.appendChild(spanElt)
     champ.value = " ";
+
+    // sauvegarde des tâches dans le localStorage
+    
+    localStorage.setItem("listTache", listeDeTaches.innerHTML)    
+
     event.preventDefault();
   })
 
-  // function effacer une tache avec la methode remove()
+// function effacer une tache avec la methode remove()
 
 function removeTache(tache){
     tache.remove();
+
+    // enregistrement de la nouvelle liste lors de l'actualisation de la page
+    
+    localStorage.setItem("listTache", listeDeTaches.innerHTML)
 }
   
   /*
