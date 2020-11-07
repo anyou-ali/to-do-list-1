@@ -1,7 +1,64 @@
+*{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#container{
+    height: 100vh;
+    background-color: #26C6DA;
+}
+
+#form{
+    text-align: center;
+}
+
+#champTache{
+    height: 50px;
+    width: 40vw;
+    margin-top: 100px;
+    font-style: italic;
+    border: solid 2px #0097A7;
+    border-radius: 10px;
+    background-color: #0097A7;
+}
+
+#boutonAjouter{
+    height: 51px;
+    width: 60px;
+    border: solid 2px #0097A7;
+    border-radius: 10px;
+    background-color: #0097A7;
+}
+
+#pasDeTache{
+    text-align: center;
+    margin-top: 15px;
+}
+
+#listeDeTaches{
+    padding-top: 20px;
+    padding-left: 230px;
+    padding-right: 230px;
+}
+
 li{
     list-style: none;
+    text-align: center;
+    padding: 3px;
+    background-color: #00ACC1;
+    margin-bottom: 4px;
+    border-radius: 5px;
+}
+
+span, #boutonAjouter{
+    cursor: pointer;
 }
 
 span{
-    cursor: pointer;
+    
+}
+
+#boutonAjouter:hover{
+    background-color: #00ACC1;
+    border: solid 2px #00ACC1;
 }

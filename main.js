@@ -21,13 +21,14 @@ form.addEventListener("submit", function(event){
     let liElt = document.createElement("li");
     let spanElt = document.createElement("span");
     spanElt.classList.add("removeliElt");
-    liElt.innerHTML = champ.value;
+    liElt.innerHTML = champTache.value;
     spanElt.textContent = " x";
     spanElt.onclick = () => removeTache(liElt);
     //spanElt.addEventListener("click",function(){removeTache(liElt)})
     listeDeTaches.appendChild(liElt)
     liElt.appendChild(spanElt)
-    champ.value = " ";
+    champTache.value = " ";
+    pasDeTache.style.display = "none";
 
     // sauvegarde des tâches dans le localStorage
     
@@ -40,6 +41,9 @@ form.addEventListener("submit", function(event){
 
 function removeTache(tache){
     tache.remove();
+    if(listeDeTaches.innerHTML === ""){
+      pasDeTache.style.display = "block";
+    }
 
     // enregistrement de la nouvelle liste lors de l'actualisation de la page
     
@@ -57,4 +61,4 @@ function removeTache(tache){
   
   //boutonAjouter.onclick = () => alert("hello"); function fléchée sans paramètre
   //boutonAjouter.onclick = (prenom) => hello("Anyou"); function fléchée avec paramètre
-  console.log(champ.value)
+  //console.log(champTache.value)
