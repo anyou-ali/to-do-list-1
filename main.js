@@ -20,9 +20,9 @@ for(let element of removeSpanElt){
 form.addEventListener("submit", function(event){
     let liElt = document.createElement("li");
     let spanElt = document.createElement("span");
-    spanElt.classList.add("removeliElt");
+    spanElt.classList.add("removeliElt", "material-icons");
     liElt.innerHTML = champTache.value;
-    spanElt.textContent = " x";
+    spanElt.textContent = "delete_forever";
     spanElt.onclick = () => removeTache(liElt);
     //spanElt.addEventListener("click",function(){removeTache(liElt)})
     listeDeTaches.appendChild(liElt)

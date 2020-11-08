@@ -14,7 +14,7 @@
 
 #champTache{
     height: 50px;
-    width: 40vw;
+    width: 300px;
     margin-top: 100px;
     font-style: italic;
     border: solid 2px #0097A7;
@@ -37,28 +37,34 @@
 
 #listeDeTaches{
     padding-top: 20px;
-    padding-left: 230px;
-    padding-right: 230px;
+    display: flex;
+    justify-content: center;
+    display: block;
+    padding-left: 150px;
+    padding-right: 150px;
 }
 
 li{
     list-style: none;
-    text-align: center;
+    justify-content: center;
     padding: 3px;
     background-color: #00ACC1;
     margin-bottom: 4px;
     border-radius: 5px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
 }
 
 span, #boutonAjouter{
     cursor: pointer;
 }
 
-span{
-    
-}
-
 #boutonAjouter:hover{
     background-color: #00ACC1;
     border: solid 2px #00ACC1;
+}
+
+.material-icons{
+    color: #b71c1c;
 }
