@@ -10,7 +10,7 @@ let removeSpanElt = document.querySelectorAll(".removeliElt");
 
 for(let element of removeSpanElt){
   element.onclick = function(){
-    removeTache(element.parentElement);
+    removeTache(element.parentElement.parentElement);
   };
   //element.onclick = () => removeTache(element.parentElement)
 }
@@ -19,22 +19,29 @@ for(let element of removeSpanElt){
 
 form.addEventListener("submit", function(){
     let liElt = document.createElement("li");
+    let textElt = document.createElement("span");
     let spanElt = document.createElement("span");
+    let spanOptionElt = document.createElement("span");
+    
+    textElt.classList.add("texte");
+    textElt.textContent = champTache.value;
     spanElt.classList.add("removeliElt", "material-icons");
     spanElt.textContent = "delete_forever";
+    spanOptionElt.classList.add("spanOptionElt");
     
-    let spanEltImportant = document.createElement("span");
-    spanEltImportant.classList.add("eltImportant", "material-icons");
-    spanEltImportant.textContent = "stars";
-    
-    liElt.innerHTML = champTache.value;
+    // let spanEltImportant = document.createElement("span");
+    // spanEltImportant.classList.add("iconImportant", "material-icons");
+    // spanEltImportant.textContent = "stars";
     
     spanElt.onclick = () => removeTache(liElt);
-    spanEltImportant.onclick = () => tacheImportant(spanEltImportant);
-    //spanElt.addEventListener("click",function(){removeTache(liElt)})
-    listeDeTaches.appendChild(liElt)
-    liElt.appendChild(spanEltImportant)
-    liElt.appendChild(spanElt)
+    //spanEltImportant.onclick = () => tacheImportant(spanEltImportant);
+    //spanElt.addEventListener("click",function(){removeTache(liElt)});
+    
+    listeDeTaches.appendChild(liElt);
+    // liElt.appendChild(spanEltImportant);
+    liElt.appendChild(textElt);
+    liElt.appendChild(spanOptionElt);
+    spanOptionElt.appendChild(spanElt);
     champTache.value = " ";
     pasDeTache.style.display = "none";
 
@@ -51,6 +58,7 @@ form.addEventListener("submit", function(){
 
 function removeTache(tache){
     tache.remove();
+    
     if(listeDeTaches.innerHTML === ""){
       pasDeTache.style.display = "block";
     }
@@ -62,9 +70,11 @@ function removeTache(tache){
 
 // function toggle pour marquer une tache comme importante
 
-function tacheImportant(element){
-    element.classList.toggle("importantLi");
-}
+// function tacheImportant(taskImportant){
+//     taskImportant.classList.toggle("taskurgent");
+//     localStorage.setItem("listTache", listeDeTaches.innerHTML);
+//     return false
+// }
   
   /*
   boutonAjouter.addEventListener("click", function(){

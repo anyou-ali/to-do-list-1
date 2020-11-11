@@ -17,34 +17,43 @@
     margin-bottom: 3vh;
 }
 
-#champTache{
+.champTache{
     width: 82vw;
     padding-left: 1vw;
     font-style: italic;
     border: solid 2px #0097A7;
     border-radius: 10px;
     background-color: #0097A7;
+}
+
+.champTache, #boutonAjouter{
     font-size: 3vw;
 }
 
-#boutonAjouter{
+.boutonAjouter{
     width: 17vw;
     border: solid 2px #0097A7;
     border-radius: 10px;
     background-color: #0097A7;
+    transition: all 0.5s;
 }
 
-#pasDeTache{
+.pasDeTache{
     margin-top: 15px;
 }
 
-span, #boutonAjouter{
+span, .boutonAjouter{
     cursor: pointer;
 }
 
-#boutonAjouter:hover{
+.boutonAjouter:hover{
     background-color: #00ACC1;
     border: solid 2px #00ACC1;
+}
+
+.boutonAjouter:active{
+    background-color: #00E676;
+    border: solid 2px #00E676;
 }
 
 ol {
@@ -63,6 +72,8 @@ ol {
     border-radius: 5px;
     text-transform: capitalize;
     font-size: 2vw;
+    display: flex;
+    align-items: center;
   }
   li::before {
     content: counter(my-awesome-counter) " ~ ";
@@ -70,12 +81,47 @@ ol {
 
 .removeliElt{
     color: #b71c1c;
+    transition: all 0.5s;
 }
 
-.eltImportant{
+.removeliElt:hover{
+    transform: rotate(360deg);
+}
+
+/* .iconImportant{
     color: #757575;
 }
 
-.importantLi{
-    color: #FDD835;
+.taskurgent{
+    color: gold;
+} */
+
+.texte{
+    display: inline-block;
+    width: 78vw;
+    word-wrap: break-word;
+}
+
+.spanOptionElt{
+    display: flex;
+    flex: auto;
+    justify-content: flex-end;
+}
+
+.pasDeTache{
+    font-style: italic;
+    font-size: 2vw;
+    margin-left: 1vw;
+}
+
+/* Media queries */
+
+@media screen and (min-width : 700px){
+    .champTache, .boutonAjouter{
+        font-size: 2.5rem;
+    }
+
+    .pasDeTache, li{
+        font-size: 2rem;
+    }
 }
