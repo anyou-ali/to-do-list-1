@@ -2,7 +2,12 @@
 
 // affichage des tâches stockées dans le localStorage
 
-listeDeTaches.innerHTML = localStorage.getItem("listTache");
+listeDeTaches.innerHTML = (localStorage.getItem("listTache") != null) ?
+localStorage.getItem("listTache") : "";
+
+// affichage de "aucune tache en cours" quand aucune valeur n'est entrée
+
+pasDeTache.style.display = (listeDeTaches.innerHTML === "") ? "block" : "none";
 
 // suppression des tâches après stockage dans le localStorage à l'aide de la sélection de class et une boucle for of 
 
@@ -78,6 +83,19 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js');
   });
+}
+
+// button installation application
+
+window.onbeforeinstallprompt = (event) => {
+     event.preventDefault();
+     installBtn.classList.add("slide");
+
+     installBtn.onclick = () => {
+       installBtn.classList.remove("slide");
+       setTimeout(() => installBtn.style.display = "none", 800);
+       event.prompt();
+     }
 }
 
 // function toggle pour marquer une tache comme importante

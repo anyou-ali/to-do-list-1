@@ -4,6 +4,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 #container{
     height: 100vh;
     background-color: #26C6DA;
@@ -114,6 +118,26 @@ ol {
     margin-left: 1vw;
 }
 
+.installBtn{
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #26C6DA;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    transition: all 0.8s;
+}
+
+.slide{
+    transform: translate(100%);
+}
+
 /* Media queries */
 
 @media screen and (min-width : 700px){
@@ -123,5 +147,9 @@ ol {
 
     .pasDeTache, li{
         font-size: 2rem;
+    }
+
+    .installBtn{
+        height: 35px;
     }
 }
