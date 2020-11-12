@@ -73,6 +73,13 @@ function removeTache(tache){
 const metas = document.getElementsByTagName("meta");
 metas[1].content = `width=device-width, height=${window.innerHeight},initial-scale=1.0`;
 
+if ('serviceWorker' in navigator) {
+  // Use the window load event to keep the page load performant
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js');
+  });
+}
+
 // function toggle pour marquer une tache comme importante
 
 // function tacheImportant(taskImportant){

@@ -1,11 +1,11 @@
 {
-    "lang": "", 
+    "lang": "fr", 
     "theme_color": "#26C6DA",
     "background_color": "#26C6DA",
     "display": "standalone",
     "orientation": "portrait",
     "scope": "/",
-    "start_url": "/index.html",
+    "start_url": "http://http://127.0.0.1:5500/index.html",
     "name": "Todo-list",
     "short_name": "Todo",
     "description": "une todo list en pwa",
