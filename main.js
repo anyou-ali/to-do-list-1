@@ -98,7 +98,7 @@ window.onbeforeinstallprompt = (event) => {
      }
 }
 
-// function toggle pour marquer une tache comme importante
+// function toggle pour marquer une tache comme importante ne fonctionne pas pour le moment
 
 // function tacheImportant(taskImportant){
 //     taskImportant.classList.toggle("taskurgent");
