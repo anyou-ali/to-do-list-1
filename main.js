@@ -68,6 +68,11 @@ function removeTache(tache){
     localStorage.setItem("listTache", listeDeTaches.innerHTML)
 }
 
+// empecher le resizing
+
+const metas = document.getElementsByTagName("meta");
+metas[1].content = `width=device-width, height=${window.innerHeight},initial-scale=1.0`;
+
 // function toggle pour marquer une tache comme importante
 
 // function tacheImportant(taskImportant){
