@@ -87,7 +87,16 @@ if ('serviceWorker' in navigator) {
 
 // button installation application
 
+window.onbeforeinstallprompt = (event) => {
+  event.preventDefault();
+  installBtn.classList.add("slide");
 
+  installBtn.onclick = () => {
+    installBtn.classList.remove("slide");
+    setTimeout(() => installBtn.style.display = "none", 800);
+    event.prompt();
+  }
+}
 
 // function toggle pour marquer une tache comme importante ne fonctionne pas pour le moment
 
