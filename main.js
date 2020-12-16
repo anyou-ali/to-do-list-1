@@ -24,7 +24,7 @@ form.addEventListener("submit", function(){ // on utilise la méthode addEventLi
     liElt.appendChild(spanOptionElt); // on va ajouter dans liElt la var spanOptionElt
     spanOptionElt.appendChild(spanElt); // on va ajouter dans spanOptionElt la var spanElt
     champTache.value = " "; // pour vider le champTache on va mettre que champTache.value est égal à une chaînes de caractères vide symbolisé par les guillemets ""
-    pasDeTache.style.display = "none";
+    pasDeTache.style.display = "none"; // on va faire disparaître la class pasDeTache avec les propriétés css pasDeTache.style.display = "none"
 
     spanElt.onclick = () => removeTache(liElt); // suppression des li avec la function removeTache() qui vient prendre en paramètre (liElt); on utilise la méthode onclick içi
     //spanEltImportant.onclick = () => tacheImportant(spanEltImportant);
